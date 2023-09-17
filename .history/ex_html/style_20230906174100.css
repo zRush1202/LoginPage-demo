@@ -1,0 +1,26 @@
+body {
+    background-color: lightgray;
+  }
+  h1 {
+    color: blue;
+    text-align: center;
+    font-size: 200%;
+    font-family:'Times New Roman', Times, serif;
+  }
+  h2 {
+    color: blue;
+    text-align: center;
+    font-size: 200%;
+    font-family:'Times New Roman', Times, serif;
+  }
+  p {
+    color: blue;
+    text-align: center;
+  }
+
+  pre {
+    color: blue;
+    text-align: center;
+    font-size: 100%;
+    font-family: 'Times New Roman', Times, serif;
+  }

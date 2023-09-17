@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.num {
+    color: aqua;
+    text-align: center;
+    font-size: 30px;
+}
+
+.des, .ins{
+    height: 80px;
+    width: 80px;
+    font-size: 40px;
+    border-radius: 40px;
+}

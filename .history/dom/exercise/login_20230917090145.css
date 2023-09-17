@@ -1,0 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.cancel {
+    top: 0;
+    right: 0;
+}

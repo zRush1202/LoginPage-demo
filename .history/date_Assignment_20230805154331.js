@@ -1,0 +1,72 @@
+function checkLeapYear(year){
+    if (year % 4 !== 0)
+        return false;
+    else if (year % 100 !== 0)
+        return true;
+    else if (year % 400 !== 0)
+        return false;
+    else 
+        return true;
+}
+
+function checkValidDate(ngay, thang, nam){
+    if (thang - 1 < 0 || thang > 12){
+        return false;
+    }
+    switch (thang){
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+            if (ngay < 1 || ngay > 31){
+                return false;
+            }
+            break;
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            if (ngay < 1 || ngay > 30){
+                return false;
+            }
+            break;
+        case 2:
+            if (checkLeapYear(nam)){
+                if (ngay < 1 || ngay > 29){
+                    return false;
+                }
+            }
+            else {
+                if (ngay < 1 || ngay > 28){
+                    return false;
+                }
+            }
+            break;
+    }
+    return true;
+}
+
+function stringToDate(str){
+    const date = new Date();
+    const arrDate = str.split('/');
+    date.setDate(parseInt(arrDate[0]));
+    date.setMonth(parseInt(arrDate[1]) - 1);
+    date.setFullYear(parseInt(arrDate[2]));
+    //Check valid date
+    if (checkValidDate(parseInt(arrDate[0]), parseInt(arrDate[1]), parseInt(arrDate[2])) === 0){
+        return null;
+    }
+    return date;
+}
+
+
+//Bài 1: Nhập vào năm sinh và in ra số tuổi
+let nDate = new Date();
+do {
+    const birthday = prompt("Nhập ngày sinh(cách nhau bởi dấu /): ");
+} while (stringToDate(birthday) === null);
+nDate = stringToDate(birthday);
+console.log(nDate);

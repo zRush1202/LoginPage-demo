@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.div {
+    height: 400px;
+    width: 100%;
+    text-align: center;
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.button {
+    background-color: blue;
+    height: 40px;
+    width: 300px;
+    font-size: 20px;
+    border-radius: 20px;
+}

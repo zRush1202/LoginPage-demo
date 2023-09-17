@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 100px;
+    background-image: linear-gradient(to right, cyan, violet);
+}
+
+.login {
+    display: block;
+    width: 500px;
+    height: 600px;
+    background-color: white;
+    border: 0px solid black;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cancel {
+    position: absolute;
+    right: 5px;
+    top: 3px;
+}
+
+.cancel {
+    font-size: 120%;
+
+}
+
+.X {
+    height: 20px;
+    width: 20px;
+    color: darkgray;
+    font-size: 100%;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    right: 100px;
+    top: 6px;
+}
+
+.user, .pass {
+    height: 60px;
+    width: 400px;
+    border-radius: 50px;
+    border: 3px solid gray;
+    margin-top: 5px;
+    font-size: 140%;
+    color: gray;
+    text-align: left + 10px;
+}
+
+.us, .pa {
+    position: relative;
+    left: 0px;
+    font-size: 120%;
+    color: gray;
+}
+
+.tk {
+    position: absolute;
+    top: 70px;
+    height: 50%;
+}
+
+.pass {
+    position: absolute;
+    top: 160px;
+}
+
+.pa {
+    position: absolute;
+    top: 140px;
+}
+
+.bgc {
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+}
+
+.chosen {
+    position: absolute;
+    bottom: 190px;
+    height: 70px;
+    width: 400px;
+}
+
+.lab {
+    position: absolute;
+    height: 50px;
+    width: 200px;
+    font-size: 120%;
+    color: gray;
+    left: 0;
+}
+
+.sel {
+    height: 60px;
+    width: 400px;
+    border-radius: 50px;
+    position: absolute;
+    top: 30px;
+    font-size: 120%;
+    border: 3px solid gray;
+    
+}
+
+.theme {
+    height: 70px;
+    width: 400px;
+    position: absolute;
+    bottom: 70px;
+
+}
+
+.tc {
+    position: relative;
+    left: 0px;
+    font-size: 120%;
+    color: gray;
+}
+
+.color {
+    height: 70px;
+    width: 400px;
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.save {
+    position: absolute;
+    bottom: -20px;
+    height: 40px;
+    width: 200px;
+    font-size: 120%;
+    background-color: rgb(103, 168, 4);
+    color: white;
+    border-radius: 30px;
+    border: 0px solid white;
+}

@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 100px;
+}
+
+.login {
+    display: block;
+    width: 400px;
+    height: 600px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+
+}
+
+.cancel {
+    top: 0;
+    right: 0;
+}
+
+.cancel {
+    font-size: 200%;
+
+}

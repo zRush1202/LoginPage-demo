@@ -1,0 +1,153 @@
+function checkLeapYear(year){
+    if (year % 4 !== 0)
+        return false;
+    else if (year % 100 !== 0)
+        return true;
+    else if (year % 400 !== 0)
+        return false;
+    else 
+        return true;
+}
+
+function checkValidDate(ngay, thang, nam){
+    if (thang - 1 < 0 || thang > 12){
+        return false;
+    }
+    switch (thang){
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+            if (ngay < 1 || ngay > 31){
+                return false;
+            }
+            break;
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            if (ngay < 1 || ngay > 30){
+                return false;
+            }
+            break;
+        case 2:
+            if (checkLeapYear(nam)){
+                if (ngay < 1 || ngay > 29){
+                    return false;
+                }
+            }
+            else {
+                if (ngay < 1 || ngay > 28){
+                    return false;
+                }
+            }
+            break;
+    }
+    return true;
+}
+
+function stringToDate(str){
+    const date = new Date();
+    const arrDate = str.split('/');
+    //Check valid date
+    if (checkValidDate(parseInt(arrDate[0]), parseInt(arrDate[1]), parseInt(arrDate[2])) === false){
+        return null;
+    }
+    date.setDate(parseInt(arrDate[0]));
+    date.setMonth(parseInt(arrDate[1]) - 1);
+    date.setFullYear(parseInt(arrDate[2]));
+    return date;
+}
+
+/*
+//Bài 1: Nhập vào năm sinh và in ra số tuổi
+console.log("Câu 1: ");
+const now = new Date();
+let nDate = new Date();
+let birthday;
+do {
+    birthday = prompt("Nhập ngày sinh(cách nhau bởi dấu /): ");
+} while (stringToDate(birthday) === null);
+nDate = stringToDate(birthday);
+console.log("Ngày sinh là: " );
+console.log(nDate.getDate(), nDate.getMonth() + 1, nDate.getFullYear());
+const Tuoi = now.getFullYear() - nDate.getFullYear();
+console.log(`Tuổi là: ${Tuoi}`);*/
+
+
+//Bài 2: Viết chương trình đếm ngược thời gian theo giây
+function printCD(time){
+    console.log(parseInt(time));
+}
+
+//let timeCD = prompt("Nhập vào thời gian cần countdown: ");
+function countdown(){
+    if (timeCD >= 0){
+        printCD(timeCD);
+        timeCD--;
+        setTimeout(countdown, 1000);
+    }
+}
+//countdown();
+
+
+//Bài 3: timeSince
+
+// const now = new Date();
+// console.log("Time hiện tại:");
+// console.log(now);
+// Sat Aug 05 2023 16:34:42 GMT+0700 (Giờ Đông Dương)
+
+function timeSince(mlTime){
+    if (mlTime / 1000 >= 60){
+        if (mlTime/(1000*60) >= 60){
+            if (mlTime/(1000*60*60) >= 24){
+                if (mlTime/(1000*60*60*24) >= 30){
+                    if (mlTime/(1000*60*60*24*30) >= 12){
+                        const nam = Math.round(mlTime/(1000*60*60*24*30*12)) + " năm trước";
+                        return nam;
+                    }
+                    else{
+                        const thang = Math.round(mlTime/(1000*60*60*24*30)) + " tháng trước";
+                        return thang;
+                    }
+                }
+                else {
+                    const ngay = Math.round(mlTime/(1000*60*60*24)) + " ngày trước";
+                    return ngay;
+                }
+            }
+            else {
+                const gio = Math.round(mlTime/(1000*60*60)) + " giờ trước";
+                return gio;
+            }
+        }
+        else{
+            const phut = Math.round(mlTime/(1000*60)) + " phút trước";
+            return phut;
+        }
+    }
+    else{
+        const giay = Math.round(mlTime/1000) + " giây trước";
+        return giay;
+    }
+}
+
+const strtime = prompt("Nhập vào thời gian: ");
+const time = new Date(strtime);
+console.log("Time nhập vào: ");
+console.log(time);
+const tlTime = time.getTime();
+const now = new Date();
+console.log("Time hiện tại:");
+console.log(now);
+const tlnow = now.getTime();
+const timefrom = tlnow - tlTime;
+if (timefrom < 0){
+    console.log("Đến từ tương lai!");
+}
+else
+    console.log(timeSince(timefrom));
